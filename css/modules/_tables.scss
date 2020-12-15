@@ -1,0 +1,45 @@
+@charset "UTF-8"; 
+// Jeff Bohn , 12/14/2020 ,  Monday assignment - Learning Sass Fundamentals 
+
+$color-even-cells: transparentize($yellow, .8);
+
+.table{
+  font-size: 2.5rem;
+  text-align: left;
+  width: 100%;
+}
+  .cap{
+    font-size: 2.5rem;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  thead, tbody, tfoot{
+  tr{
+
+      &:hover{
+        background-color: darken(adjust-hue($color-backgrounds, -20deg), 10%);
+      }
+       &:nth-child(even) {
+        background-color: $color-even-cells;
+       &:hover {
+          background-color: opacify($color-even-cells, .3);
+        }
+      }
+      th, td{
+        padding: 10px;
+        border-bottom: 2px dotted $blue;
+      }
+    }
+  }
+
+    thead  tr{
+    background-color: $blue;
+    color: $color-backgrounds;
+    &:hover{
+      background-color: complement($blue);
+    }
+    th{
+      border-bottom :0;
+    }
+  }
